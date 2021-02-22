@@ -1,0 +1,838 @@
+
+</DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="../css/font-awesome.min.css" rel="stylesheet">
+	<link href="../css/bootstrap.css" rel="stylesheet">
+	<link href="../css/style.css" rel="stylesheet">
+	<link rel="shortcut icon" href="images/favicon.ico"/>
+</head>
+<body>
+	<header>
+		<div id="header"></div>
+	</header>
+	<main>
+		<div class="container-fluid pa0 mt30">
+			<div class="container account-cont-wrapper">
+			      <span id="fail" style="display: none; color: red;text-align: center;">Table Not Found Please Select Other Values.</span>
+			<div class="container-fluid mt35 pa0" style="margin-top: 0px;">
+<p id="emptytablemsg" style="color: white; background: green; width: 50%; margin: auto; padding: 10px;display:none;">
+			<div class="row black-ft mlr0" style="margin-top: 15px;">
+				<div class="col-md-2 col-sm-3 col-xs-12">
+					<h3 class="text-uppercase mt10" style="color:yellow;"><span>Quick Join : </span></h3>
+				</div>
+				<div class="col-md-8 col-sm-7 col-xs-12">
+				     <span style="color: white; margin-top: 10px;">Players :</span>
+				<div class="btn-group" role="group">
+				   
+                  <button type="button" class="btn " onclick="check_but(this.value);" style=" margin-top: 5px;color: #fff;
+    background: -webkit-linear-gradient(#9b57f0, #4f2f77)" id="2_Players"name="2 Players" value="2" >2 </button>
+                  <button type="button" class="btn " onclick="check_but(this.value);" value="6" style=" margin-top: 5px;color: #fff;
+    background: -webkit-linear-gradient(#9b57f0, #4f2f77)" id="6_Players" name="6 Players">6 </button>
+                 <input type="hidden"  name="btnval" id="btnval" value="2"/>
+                </div>
+                &nbsp;&nbsp;&nbsp;
+               <div style="display: -webkit-inline-box;"> 
+                    <span style="color: white; margin-top: 10px;">Point Value :</span>
+              <button class="btn " style=" margin-top: 5px;height: 34px;color: #fff;
+    background: -webkit-linear-gradient(#9b57f0, #4f2f77)">  	<i  class="glyphicon glyphicon-minus"  onclick="minus();" title="" style="color:white;"></i></button>
+      	        </button><input type="text" style="width: 50px;text-align: -webkit-center;  margin-top: 5px; padding-bottom: 9px;"name="points" style=" margin-top: 5px;"value="0.05" id="points" disabled />
+      	         <input type="hidden" style="width: 50px;text-align: -webkit-center;  margin-top: 5px; padding-bottom: 9px;"name="points" style=" margin-top: 5px;"value="rohit116" id="user" disabled />
+                 <button class="btn " style=" margin-top: 5px;height: 34px;color: #fff;
+    background: -webkit-linear-gradient(#9b57f0, #4f2f77)">	<i  class="glyphicon glyphicon-plus" title=""  onclick="plus();"style="color:white;"></i></button>
+                </div> &nbsp;&nbsp;&nbsp; 	<a id="join" target="" onclick="join('rohit116')"><button  style=" margin-top: 5px;color: #fff;
+    background: -webkit-linear-gradient(#9b57f0, #4f2f77)"class="btn">Join</button></a>
+				</div>
+			
+			</div>
+	
+	</div>
+				<div class="row point-rummy-wrapper mt20">
+					<div class="col-md-3 col-sm-4">
+	<nav>
+		<div class="dropdown over-hid">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Rummy Lobby
+				<i class="fa fa-angle-down ml15" aria-hidden="true"></i>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li><a href="point-lobby-rummy.php">Point Rummy</a></li><hr class="mt0 mb0">
+				<li><a href="pool-lobby-rummy.php">Pool Rummy</a></li><hr class="mt0 mb0">
+				<li><a href="deal_lobby_rummy.php">Deal Rummy</a></li><hr class="mt0 mb0">
+				<li><a href="papplu_lobby_rummy.php">Papplu Rummy</a></li><hr class="mt0 mb0">
+				
+			</ul>
+		</div>
+		<hr class="mt0 mb0">
+		<div class="dropdown over-hid">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				Free Rummy Lobby
+				<i class="fa fa-angle-down ml15" aria-hidden="true"></i>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li><a href="point-fun-games.php">Point Rummy</a></li><hr class="mt0 mb0">
+				<li><a href="pool-fun-games.php">Pool Rummy</a></li><hr class="mt0 mb0">
+				<li><a href="deal_rummy_fun.php">Deal Rummy</a></li><hr class="mt0 mb0">
+				<li><a href="papplu_rummy_fun.php">Papplu Rummy</a></li><hr class="mt0 mb0">
+				
+			</ul>
+		</div>
+		<hr class="mt0 mb0">
+		<ul>
+			<li><a href="tournaments.php" class="over-hid">Tournaments</a></li><hr class="mt0 mb0">
+		</ul>
+		<div class="dropdown over-hid">
+			<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				My Account
+				<i class="fa fa-angle-down ml15" aria-hidden="true"></i>
+			</button>
+			<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				<li><a href="my-account.php" class="over-hid">My Account</a></li><hr class="mt0 mb0">
+					<li><a href="list-login-histroy.php">Login History</a></li><hr class="mt0 mb0">
+				<li><a href="my-profile.php">My Profile</a></li><hr class="mt0 mb0">
+				<li><a href="buy-chips.php">Add Money</a></li><hr class="mt0 mb0">
+				<li><a href="change-password.php">Change Password</a></li><hr class="mt0 mb0">
+				<li><a href="my-transactions.php">My Transactions</a></li><hr class="mt0 mb0">
+				<li><a href="tournament_user.php">Joined Tournament</a></li><hr class="mt0 mb0">
+				<li><a href="cash-transaction.php">Cash Transactions</a></li><hr class="mt0 mb0">
+				<li><a href="withdrawals.php">Withdrawals</a></li><hr class="mt0 mb0">
+				<li><a href="bank-details.php">Bank Details</a></li><hr class="mt0 mb0">
+				<li><a href="update-kyc.php">Update KYC</a></li><hr class="mt0 mb0">
+				<li><a href="refer-friend.php">Refer A Friend</a></li><hr class="mt0 mb0">
+				<li><a href="sentemail_to_refer_list.php">Sent Mails List</a></li><hr class="mt0 mb0">
+				<li><a href="list_of_referral_commission.php">Commission On refer</a></li><hr class="mt0 mb0">
+				<li><a href="withdraw_ref_commission.php">Redeem Commission</a></li><hr class="mt0 mb0">
+				<li><a href="banners_list.php">Banners List</a></li><hr class="mt0 mb0">
+			</ul>
+		</div>
+		<hr class="mt0 mb0">
+		<ul>
+			<li><a href="account-contact-us.php" class="over-hid">Help & Support</a></li>
+		</ul>
+	</nav>
+</div>					<div class="col-md-9 game-type over-hid">
+					     <div class="table-responsive black-ft">
+	<table class="table table-bordered">
+			<thead>
+				<tr style="color:white;">
+					<th>Joined Table</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+						</tbody>
+	</table>
+</div>
+					     </br>
+					     <div class="dropdown black-ft">
+						    
+					     <select class="btn btn-default dropdown-toggle black-ft" id="players" style="color: white;">
+					         <option value="">Players</option>
+					         <option value="2">2 Players</option>
+					         <option value="6">6 Players</option>
+					         </select>
+						</div>
+					    <input type="hidden" id="logid" value="rohit116">
+					    <div class="dropdown black-ft">
+						    
+					     <select class="btn btn-default dropdown-toggle black-ft" id="min" style="color: white;">
+					         <option value="">Min Entry</option>
+					         <option value="4">4</option>
+					         <option value="10">10</option>
+					         <option value="20">20</option>
+					         <option value="50">50</option>
+					         <option value="100">100</option>
+					         <option value="200">200</option>
+					         <option value="500">500</option>
+					         <option value="1000">1000</option>
+					         <option value="2000">2000</option>
+					         <option value="3000">3000</option>
+					          <option value="5000">5000</option>
+					         </select>
+						</div>
+						
+						
+						 <div class="dropdown black-ft">
+						    
+					     <select class="btn btn-default dropdown-toggle black-ft" id="max" style="color: white;">
+					         <option value="">Max Entry</option>
+					        <option value="4">4</option>
+					         <option value="10">10</option>
+					         <option value="20">20</option>
+					         <option value="50">50</option>
+					         <option value="100">100</option>
+					         <option value="200">200</option>
+					         <option value="500">500</option>
+					         <option value="1000">1000</option>
+					         <option value="2000">2000</option>
+					         <option value="3000">3000</option>
+					          <option value="5000">5000</option>
+					         </select>
+						</div>
+						
+						
+						<div class="dropdown black-ft">
+						    
+					     <select class="btn btn-default dropdown-toggle black-ft" id="hide" style="color: white;">
+					         <option value="">All Show</option>
+					         <option value="empty">Empty Tables</option>
+					            <option value="seating">Seating Tables</option>
+					         <option value="full">Full Tables</option>
+					         </select>
+						</div>
+					    
+					   
+					
+						<section>
+						<div class="table-responsive horizontal">
+							<table class="table table-bordered table-striped table-condensed">
+								<thead>
+									<tr>
+										<th>Table Name</th>
+										<th>Game Type</th>
+										<th>Point Value</th>
+										<th>Min Entry</th>
+										<th>Status</th>
+										<th>Players</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+								<tbody id="pointdata">
+																		    <tr>
+									    <td> ASD</td>
+									      <td> Point Rummy</td>
+									        <td>1 </td>
+									        <td>80</td>
+										<td>process</td>
+										<td id="pl_cap">0/2</td>
+									       	<td>
+																						<a id="two_pl_game" onclick="check(18,'rohit116')"  target=""><button   class="btn btn-primary">Join</button></a>										</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> New Table</td>
+									      <td> Point Rummy</td>
+									        <td>1 </td>
+									        <td>80</td>
+										<td>process</td>
+										<td id="pl_cap">0/2</td>
+									       	<td>
+																						<a id="two_pl_game" onclick="check(19,'rohit116')"  target=""><button   class="btn btn-primary">Join</button></a>										</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 2 Player</td>
+									      <td> Point Rummy</td>
+									        <td>0.1 </td>
+									        <td>8</td>
+										<td>process</td>
+										<td id="pl_cap">0/2</td>
+									       	<td>
+																						<a id="two_pl_game" onclick="check(42,'rohit116')"  target=""><button   class="btn btn-primary">Join</button></a>										</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 2 Tables</td>
+									      <td> Point Rummy</td>
+									        <td>0.2 </td>
+									        <td>16</td>
+										<td>process</td>
+										<td id="pl_cap">0/2</td>
+									       	<td>
+																						<a id="two_pl_game" onclick="check(43,'rohit116')"  target=""><button   class="btn btn-primary">Join</button></a>										</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 2 Tables</td>
+									      <td> Point Rummy</td>
+									        <td>0.3 </td>
+									        <td>24</td>
+										<td>process</td>
+										<td id="pl_cap">0/2</td>
+									       	<td>
+																						<a id="two_pl_game" onclick="check(44,'rohit116')"  target=""><button   class="btn btn-primary">Join</button></a>										</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 2 Tables</td>
+									      <td> Point Rummy</td>
+									        <td>0.5 </td>
+									        <td>40</td>
+										<td>process</td>
+										<td id="pl_cap">0/2</td>
+									       	<td>
+																						<a id="two_pl_game" onclick="check(45,'rohit116')"  target=""><button   class="btn btn-primary">Join</button></a>										</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 2 Tables</td>
+									      <td> Point Rummy</td>
+									        <td>1 </td>
+									        <td>80</td>
+										<td>process</td>
+										<td id="pl_cap">0/2</td>
+									       	<td>
+																						<a id="two_pl_game" onclick="check(46,'rohit116')"  target=""><button   class="btn btn-primary">Join</button></a>										</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 6 Players</td>
+									      <td> Point Rummy</td>
+									        <td>0.1 </td>
+									        <td>8</td>
+										<td>process</td>
+										<td id="pl_cap">0/6</td>
+									       	<td>
+																						<a id="six_pl_game" target="" onclick="open_six_player_popup(47,'rohit116')"><button class="btn btn-primary">Join</button></a>
+																					</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 6 Players</td>
+									      <td> Point Rummy</td>
+									        <td>0.2 </td>
+									        <td>16</td>
+										<td>process</td>
+										<td id="pl_cap">0/6</td>
+									       	<td>
+																						<a id="six_pl_game" target="" onclick="open_six_player_popup(48,'rohit116')"><button class="btn btn-primary">Join</button></a>
+																					</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 6 Players</td>
+									      <td> Point Rummy</td>
+									        <td>0.3 </td>
+									        <td>24</td>
+										<td>process</td>
+										<td id="pl_cap">0/6</td>
+									       	<td>
+																						<a id="six_pl_game" target="" onclick="open_six_player_popup(49,'rohit116')"><button class="btn btn-primary">Join</button></a>
+																					</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 6 Players</td>
+									      <td> Point Rummy</td>
+									        <td>0.5 </td>
+									        <td>40</td>
+										<td>process</td>
+										<td id="pl_cap">0/6</td>
+									       	<td>
+																						<a id="six_pl_game" target="" onclick="open_six_player_popup(50,'rohit116')"><button class="btn btn-primary">Join</button></a>
+																					</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> 6 Players</td>
+									      <td> Point Rummy</td>
+									        <td>1 </td>
+									        <td>80</td>
+										<td>process</td>
+										<td id="pl_cap">0/6</td>
+									       	<td>
+																						<a id="six_pl_game" target="" onclick="open_six_player_popup(51,'rohit116')"><button class="btn btn-primary">Join</button></a>
+																					</td>
+									            </tr>  
+									    
+									    									    <tr>
+									    <td> Running Rummy</td>
+									      <td> Point Rummy</td>
+									        <td>10 </td>
+									        <td>800</td>
+										<td>process</td>
+										<td id="pl_cap">0/6</td>
+									       	<td>
+																						<a id="six_pl_game" target="" onclick="open_six_player_popup(212,'rohit116')"><button class="btn btn-primary">Join</button></a>
+																					</td>
+									            </tr>  
+									    
+									     
+		</tbody>	
+							</table>
+						</div>
+						</section>
+					</div>
+					<!--<div class="col-md-9 game-type over-hid">
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Game Type
+								<i class="fa fa-angle-down ml15" aria-hidden="true"></i>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li><a href="#" class="over-hid">Joker</a></li><hr class="mt0 mb0">
+								<li><a href="#">No Joker</a></li><hr class="mt0 mb0">
+							</ul>
+						</div>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Players
+								<i class="fa fa-angle-down ml15" aria-hidden="true"></i>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li><a href="#" class="over-hid">2 Players</a></li><hr class="mt0 mb0">
+								<li><a href="#">6 Players</a></li><hr class="mt0 mb0">
+							</ul>
+						</div>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Bet Value
+								<i class="fa fa-angle-down ml15" aria-hidden="true"></i>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li><a href="#" class="over-hid">Low</a></li><hr class="mt0 mb0">
+								<li><a href="#">Medium</a></li><hr class="mt0 mb0">
+								<li><a href="#">High</a></li><hr class="mt0 mb0">
+							</ul>
+						</div>
+						<div class="dropdown">
+							<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+								Hide
+								<i class="fa fa-angle-down ml15" aria-hidden="true"></i>
+							</button>
+							<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+								<li><a href="#" class="over-hid">Empty Tables</a></li><hr class="mt0 mb0">
+								<li><a href="#">Full Tables</a></li><hr class="mt0 mb0">
+							</ul>
+						</div><section>
+						<div class="table-responsive horizontal">
+							<table class="table table-bordered table-striped table-condensed">
+								<thead>
+									<tr>
+										<th>Table Name</th>
+										<th>Game Type</th>
+										<th>Point Value</th>
+										<th>Min Entry</th>
+										<th>Status</th>
+										<th>Players</th>
+										<th>Action</th>
+									</tr>
+								</thead>
+														<tbody>
+									 
+		</tbody>	
+							</table>
+						</div>
+						</section>
+					</div>-->
+				</div>
+				<hr>
+			</div>
+				<input type="hidden" id="pointarray" name="pointarray[]" value="">
+		</div>
+	</main>
+	<footer>
+		<div id="footer"></div>
+	</footer>
+</body>
+
+
+
+
+
+<script type="text/javascript"> 
+	
+	/*
+	previous code in td - a tag 
+	onclick="window.open('http://localhost:8087/join_table?table_id=&user=rohit116','Two Player Rummy','width=900,height=600','_blank')"
+	*/
+	var popup_opened_once=false;
+	var opened_table_id = 0;
+	var six_pl_popup_opened_once=false;
+	var six_pl_opened_table_id = 0;
+
+	var check =function(table_id,player) 
+	{
+		/** If same pop-up closed and opened again **/
+		if(table_id ==opened_table_id)
+		{ popup_opened_once = false; }
+		
+		if(popup_opened_once == false)
+		{
+			var w = window.open('http://rummysahara.com:3000/join_table?table_id='+table_id+'&user='+player+'','Two Player Rummy','width=900,height=600','_blank');
+			popup_opened_once = true;
+			opened_table_id = table_id;
+		}
+		else if(popup_opened_once == true && table_id !=opened_table_id)
+		{
+			open_other_popup(table_id,player); 
+		}
+	}
+
+	var open_other_popup =function(table_id,player) 
+	{
+			var ww = window.open('http://rummysahara.com:3000/join_table?table_id='+table_id+'&user='+player+'','Two Player Rummy Table_'+table_id,'width=900,height=600','_blank');
+	}
+	var open_six_player_popup=function(table_id,player) 
+	{
+	
+		/** If same pop-up closed and opened again **/
+		if(table_id ==six_pl_opened_table_id)
+		{ six_pl_popup_opened_once = false; }
+		
+		if(six_pl_popup_opened_once == false)
+		{
+			var w_six = window.open('http://rummysahara.com:3000/join_table?table_id='+table_id+'&user='+player+'','Six Player Rummy','width=1000,height=655','_blank');
+			six_pl_popup_opened_once = true;
+			six_pl_opened_table_id = table_id;
+		}
+		else if(six_pl_popup_opened_once == true && table_id !=six_pl_opened_table_id)
+		{
+			open_other_six_pl_popup(table_id,player); 
+		}
+	}
+
+	var open_other_six_pl_popup =function(table_id,player) 
+	{
+			var ww_six = window.open('http://rummysahara.com:3000/join_table?table_id='+table_id+'&user='+player+'','Six Player Rummy Table_'+table_id,'width=1000,height=655','_blank');
+	}
+	
+	
+</script>
+	<script src="../js/jquery.js"></script>
+	<script src="../js/bootstrap.min.js"></script>
+	<script>
+		$(function(){
+		  $("#header").load("header.php"); 
+		  $("#footer").load("footer.php"); 
+		});
+	</script>
+		<script type="text/javascript">
+		
+ //var arr=["0.05", "0.1","0.25","0.5","1","2","5","10","20","40"];
+ 
+function check_but(a){
+    
+    var a;
+    var pointval=a;
+    if(a==2){
+        
+         $("#btnval").val(a);
+    a="#2_Players";
+    var b="#6_Players";
+         
+   $(a).removeClass('btn ').addClass('btn btn-primary');
+    $(b).removeClass('btn btn-primary').addClass('btn ');
+    }
+    else{
+        
+           $("#btnval").val(a); 
+  var a="#6_Players";
+   var b="#2_Players";
+
+   $(a).removeClass('btn').addClass('btn btn-primary');
+    $(b).removeClass('btn btn-primary').addClass('btn ');
+    }
+   
+    var dataString ='getpointvaluefree='+pointval;
+   
+    $.ajax({
+    
+        type: "POST",
+        url:"ajax_function.php",
+        data: dataString,
+        cache: false,
+        success: function(data){
+          $('#pointarray').val('');
+          $('#pointarray').val(data);
+          
+            var arr1=$("#pointarray").val();
+            var arr = arr1.split(',');
+            var points= $("#points").val(); 
+            
+            var len=arr.length;
+            a = arr.indexOf(points)
+            
+            if(a!=len-1){
+            
+            var valu= arr[a+1];
+            $("#points").val(valu); 
+           
+            
+            }
+        
+        }
+    });
+   
+    
+}
+
+function plus(){
+   var arr1=$("#pointarray").val();
+   var arr = arr1.split(',');
+        var points= $("#points").val(); 
+        
+        var len=arr.length;
+        a = arr.indexOf(points)
+         //alert("plus"+a);
+        if(a!=len-1){
+        
+            var valu= arr[a+1];
+            $("#points").val(valu); 
+          //alert(valu);
+        
+        }
+}
+
+function minus(){
+   var arr1=$("#pointarray").val();
+   var arr = arr1.split(',');
+    var points= $("#points").val(); 
+     
+ 
+ 
+   a = arr.indexOf(points)
+   if(a!=0){
+       
+         var valu=  arr[a-1];
+       $("#points").val(valu); 
+     //  alert(valu);
+   }
+   
+}
+function jointableneww(){
+ 
+  var tabid=$('#tabjoin').attr('data-tid');
+  var usernewid=$('#tabjoin').attr('data-uid');
+  var capid=$('#tabjoin').attr('data-capid');
+  $("#emptytablemsg").html('');
+    $("#emptytablemsg").hide(); 
+    if(capid==2){
+    
+    check(tabid,usernewid);
+    
+    }else{
+    
+    open_six_player_popup(tabid,usernewid);
+    
+    }        
+  
+}
+
+function jointablenewclose(){
+ 
+  $("#emptytablemsg").html('');
+    $("#emptytablemsg").hide(); 
+
+}
+ 
+function join(user){
+    
+    var username=user;
+   var points= $("#points").val();
+  var no_of_player= $("#btnval").val(); 
+    var game="Free Game";
+    var game_type="Point Rummy"
+    	var email = $("#email").val();
+		var user = $("#user").val();
+			$.post("get_tbl_id.php",
+			{
+				no_of_player:no_of_player,
+				game:game,
+				game_type:game_type,
+				points:points
+			},
+			
+				function(data){
+			  var data1 = JSON.parse(data);
+		  if(data1.table_details.length!=0){
+		for (var i = 0; i < data1.table_details.length; i++) {
+    var counter = data1.table_details[i];
+var  table_id = counter.table_id;
+var  player_capacity  =counter.player_capacity;
+  
+//alert(table_id+"=="+player_capacity+"=="+user);
+    console.log(counter.table_id);
+        if(data1.joined == 'join'){
+                                          $("#emptytablemsg").hide();
+                                            if(player_capacity==2){
+                                            
+                                              check(table_id,user);
+                                            
+                                            }else{
+                                            
+                                             open_six_player_popup(table_id,user);
+                                             
+                                            }
+                                            
+                                     }else{
+
+var htmldata=' running table is not available, do you want to seat on new table? <a style="margin: 5px;" onclick="jointableneww();" data-tid="'+table_id+'" data-uid="'+user+'" data-capid="'+player_capacity+'"  class="btn btn-primary" id="tabjoin">Yes</a><a onclick="jointablenewclose();" class="btn btn-danger" id="tabjoincancel">No</a>';
+                                      $("#emptytablemsg").html(htmldata);
+                                        $("#emptytablemsg").show();
+                                     }
+  
+    
+}
+		}else{
+		    	 $('#fail').fadeIn().delay(5000).fadeOut();
+		}	});
+		
+			    
+			    
+		
+
+}
+
+		$(function(){
+
+		  $("#header").load("header.php"); 
+		  $("#footer").load("footer.php"); 
+		});
+
+
+
+	
+	
+		$(document).ready(function() { /// Wait till page is loaded
+setInterval(timingLoad, 10000);
+function timingLoad() {
+    
+    var players = $("#players").val();
+     	var min = $("#min").val();
+     	var max = $("#max").val();
+     	var hide = $("#hide").val();
+        	var logid = $("#logid").val();
+     	
+          var dataString ='funpointplayers='+players+'&min='+min+'&max='+max+'&hide='+hide+'&logid='+logid;
+            $.ajax({
+            
+            type: "POST",
+            url:"ajax_function.php",
+            data: dataString,
+            cache: false,
+            success: function(data){
+            	
+            	$('#pointdata').html('');
+            $('#pointdata').html(data);
+            
+            }
+            });
+
+//$('section').load('point-fun-games.php section', function() {
+/// can add another function here
+//});
+}
+});
+
+	</script>
+
+		<script>
+$(function(){
+		
+     	$("#players").change(function(){
+	     	var players = $("#players").val();
+	     	var min = $("#min").val();
+	     	var max = $("#max").val();
+	     	var hide = $("#hide").val();
+		   
+		
+             	var logid = $("#logid").val();
+	     	
+		      var dataString ='funpointplayers='+players+'&min='+min+'&max='+max+'&hide='+hide+'&logid='+logid;
+               // alert(dataString);
+                $.ajax({
+                
+                type: "POST",
+                url:"ajax_function.php",
+                data: dataString,
+                cache: false,
+                success: function(data){
+                		
+                $('#pointdata').html(data);
+                
+                }
+                });
+
+		
+		
+		});
+		
+		
+		$("#min").change(function(){
+	     	var players = $("#players").val();
+	     	var min = $("#min").val();
+	     	var max = $("#max").val();
+	     	var hide = $("#hide").val();
+		
+             	var logid = $("#logid").val();
+	     	
+		      var dataString ='funpointplayers='+players+'&min='+min+'&max='+max+'&hide='+hide+'&logid='+logid;
+                
+                $.ajax({
+                
+                type: "POST",
+                url:"ajax_function.php",
+                data: dataString,
+                cache: false,
+                success: function(data){
+                
+                	$('#pointdata').html('');
+                $('#pointdata').html(data);
+                
+                }
+                });
+
+		
+		
+		});
+		
+		$("#max").change(function(){
+	     var players = $("#players").val();
+	     	var min = $("#min").val();
+	     	var max = $("#max").val();
+	     	var hide = $("#hide").val();
+	     		var logid = $("#logid").val();
+	     	
+		      var dataString ='funpointplayers='+players+'&min='+min+'&max='+max+'&hide='+hide+'&logid='+logid;
+                $.ajax({
+                
+                type: "POST",
+                url:"ajax_function.php",
+                data: dataString,
+                cache: false,
+                success: function(data){
+                	
+                	$('#pointdata').html('');
+                $('#pointdata').html(data);
+                
+                }
+                });
+
+		
+		
+		});
+		
+		
+			$("#hide").change(function(){
+	       var players = $("#players").val();
+	     	var min = $("#min").val();
+	     	var max = $("#max").val();
+	     	var hide = $("#hide").val();
+		    	var logid = $("#logid").val();
+	     	
+		      var dataString ='funpointplayers='+players+'&min='+min+'&max='+max+'&hide='+hide+'&logid='+logid;
+                $.ajax({
+                
+                type: "POST",
+                url:"ajax_function.php",
+                data: dataString,
+                cache: false,
+                success: function(data){
+                	
+                	$('#pointdata').html('');
+                $('#pointdata').html(data);
+                
+                }
+                });
+
+		
+		
+		});
+	
+});
+	</script>
+	
+</html>
